@@ -9,10 +9,18 @@
    name: lan1
    ip_addrs: ['192.168.1.1/24','10.0.10.1/24']
    enable_snat: True
+- lan:
+   name: lan2
+
 - iface:
    name: eth0
    attached_vswitch: vswitch2
    attached_lan: lan1
    ip_addrs: ['192.168.1.2/24']
    gateway: '192.168.1.1'
-   
+ 
+- iface:
+   name: eth1
+   attached_vswitch: vswitch2
+   attached_lan: lan1
+     
