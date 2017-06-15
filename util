@@ -68,7 +68,10 @@ create_lan()
 delete_lan()
 {
 	if [ $#  -eq 1 ] ; then
-		ovs-vsctl del-br $1
+        ovs-vsctl br-exists $1
+        if [ $? -eq 0 ] ; then
+           ovs-vsctl del-br $1 
+        fi
 	fi
     
 }
